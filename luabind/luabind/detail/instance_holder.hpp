@@ -80,13 +80,13 @@ class pointer_holder : public instance_holder
 {
 public:
     pointer_holder(
-        P p, class_id dynamic_id, void* dynamic_ptr, class_rep* cls
+        P pp, class_id pdynamic_id, void* pdynamic_ptr, class_rep* cls
     )
       : instance_holder(cls, check_const_pointer(false ? get_pointer(p) : 0))
-      , p(p)
+      , p(pp)
       , weak(0)
-      , dynamic_id(dynamic_id)
-      , dynamic_ptr(dynamic_ptr)
+      , dynamic_id(pdynamic_id)
+      , dynamic_ptr(pdynamic_ptr)
     {}
 
     std::pair<void*, int> get(class_id target) const
